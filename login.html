@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google fonts cdn -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Poppins:wght@300;500;600&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <!-- External CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <navbar class="nav-bar">
+        <!-- <img src="images/logo.png" alt="logo" width="100px"> -->
+        <div class="logo">
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="featuredProducts.html">Featured Products</a></li>
+                <li><a href="?p=recentlyLaunched">Recently Launched</a></li>
+                <li><a href="?p=contact">Contact Us</a></li>
+            </ul>
+            <div class="enter">
+                <a href="?p=login" class="createAcc"><div class="accIcon"></div></a>
+                <p>|</p>
+                <a href="?p=cart" class="createAcc"><div class="cartIcon"></div></a>
+            </div>
+        </div>
+    </navbar> 
+    <div class="loginContainer">
+        <div class="coffeeMug"></div>
+        <div class="cupCoffee"></div>
+        <div class="canCoffee"></div>
+        <div class="mugCoffee"></div>
+        <form action="#" class="logInForm" method="POST">
+        <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email" class="inputBoxes addWid" onblur="checkEmail()" name="email">
+            <input type="password" id="passWord" placeholder="Password" class="inputBoxes addWid" onblur="checkEmail()" name="pass">
+            <div class="goInLine">
+                <input type="submit" placeholder="Password" class="logInSubmit" onblur="checkEmail()" name="submitBtn">
+                <a href="signup.html">Create Account</a>
+            </div>
+        </form>
+    </div>
+
+<script>
+
+</script>
+
+</body>
+</html>
