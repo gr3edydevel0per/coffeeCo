@@ -1,27 +1,22 @@
- <!-- Google fonts cdn -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Poppins:wght@300;500;600&family=Sacramento&display=swap"
-        rel="stylesheet">
-<h3 style="font-family: 'Sacramento', cursive;">The Coffe Company </h3>
-<img src="./image.png">
-
-# Website Development Journey
-
-## Introduction
-
-I am an experienced website developer with a strong track record of creating functional and aesthetically pleasing websites. While I excel in development, the design aspect presents the greatest challenge for me, requiring focused attention and iterative refinement.
-
-## Design Focus
-
-When embarking on a website project, I dedicate 3 to 4 days solely to conceptualizing and crafting the design. This intensive phase sets the foundation for a visually engaging and user-friendly experience. Throughout the development process, I continuously refine and enhance the design to ensure its seamless integration with the functionality.
-
-## Ongoing Project
-
-Currently, I am working on a website project that has been in progress since last semester. Due to time constraints, I have yet to delve deeper into its development, but my plan includes optimizing it for various screen sizes to enhance accessibility and user experience.
-
-## Asset Challenges
-
-One of the significant challenges I encountered during development was sourcing the right assets, including images, GIFs, and SVGs. The process of searching for these assets was arduous, compounded by the complexity of reviewing numerous options simultaneously. This resulted in delays and necessitated a meticulous approach to asset selection.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700; /* Bold style */
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Project</h1>
+  <p>This is a sample README file using Google Fonts.</p>
+</body>
+</html>
