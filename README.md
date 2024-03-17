@@ -1,6 +1,6 @@
 
 <h3 style="font-family: 'Sacramento', cursive;">The Coffe Company </h3>
-<img src="./image.png">
+<img src="landingPage/image.png">
 
 # Website Development Journey
 
