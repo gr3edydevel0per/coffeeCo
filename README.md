@@ -1,3 +1,4 @@
+<img src="./image.png">
 <p>Developing a website is not a difficult task for me; I have developed many websites earlier.
 The most challenging part for me is the design aspect, where I lack expertise the most. 
 If I have to build a website, I will spend 3 to 4 days only thinking about the design, and then I will keep refining the design during the development phase.
