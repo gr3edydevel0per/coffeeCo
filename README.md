@@ -1,9 +1,18 @@
 <img src="./image.png">
-<p>Developing a website is not a difficult task for me; I have developed many websites earlier.
-The most challenging part for me is the design aspect, where I lack expertise the most. 
-If I have to build a website, I will spend 3 to 4 days only thinking about the design, and then I will keep refining the design during the development phase.
-Talking about this website, I have been working on it since last semester but did not get the opportunity to work on it further. Currently, I have built it for 
-larger screen sizes, but with time, I will fix it for smaller screen sizes.
-Besides the design challenge, another challenge I faced was searching for the right assets. I had to search for many images, GIFs, and SVGs, which was the 
-most horrible part. Searching was a problem in itself, but looking at a large number of assets simultaneously created confusion, ultimately leading to delays.
- </p>
+<# Website Development Journey
+
+## Introduction
+
+I am an experienced website developer with a strong track record of creating functional and aesthetically pleasing websites. While I excel in development, the design aspect presents the greatest challenge for me, requiring focused attention and iterative refinement.
+
+## Design Focus
+
+When embarking on a website project, I dedicate 3 to 4 days solely to conceptualizing and crafting the design. This intensive phase sets the foundation for a visually engaging and user-friendly experience. Throughout the development process, I continuously refine and enhance the design to ensure its seamless integration with the functionality.
+
+## Ongoing Project
+
+Currently, I am working on a website project that has been in progress since last semester. Due to time constraints, I have yet to delve deeper into its development, but my plan includes optimizing it for various screen sizes to enhance accessibility and user experience.
+
+## Asset Challenges
+
+One of the significant challenges I encountered during development was sourcing the right assets, including images, GIFs, and SVGs. The process of searching for these assets was arduous, compounded by the complexity of reviewing numerous options simultaneously. This resulted in delays and necessitated a meticulous approach to asset selection.
