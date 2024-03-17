@@ -1,4 +1,5 @@
 <img src="./image.png">
+
 # Website Development Journey
 
 ## Introduction
