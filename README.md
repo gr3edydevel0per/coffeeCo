@@ -1,3 +1,10 @@
+ <!-- Google fonts cdn -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Poppins:wght@300;500;600&family=Sacramento&display=swap"
+        rel="stylesheet">
 <h3 style="font-family: 'Sacramento', cursive;">The Coffe Company </h3>
 <img src="./image.png">
 
