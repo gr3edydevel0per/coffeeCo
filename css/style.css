@@ -26,7 +26,7 @@ body {
 .banner {
     /* background-color:rgb(236 216 196); */
     /* background: linear-gradient(to right, rgb(0 0 0 / 88%), rgb(255 255 255 / 0%)), url(images/coffee.jpg); */
-    background-image: url('images/wave6.svg');
+    background-image: url('../images/wave6.svg');
     width: 100%;
     height: 43rem;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ body {
 }
 
 .logo {
-    background-image: url('images/logo.png');
+    background-image: url('../images/logo.png');
     width: 8rem;
     height: 8rem;
     background-size: contain;
@@ -88,7 +88,7 @@ a:hover {
 
 }
 .backHead {
-    background-image: url(images/beans.png);
+    background-image: url(../images/beans.png);
     width: 29.3%;
     background-size: contain;
     left: 35%;
@@ -98,7 +98,7 @@ a:hover {
     height: 350px;
 }
 .backHeadExplore {
-    background-image: url(images/beans.png);
+    background-image: url(../images/beans.png);
     width: 29.3%;
     background-size: contain;
     left: 35%;
@@ -126,7 +126,7 @@ Display Card
 }
 
 .cartIcon {
-    background-image: url(images/cart.png);
+    background-image: url(../images/cart.png);
     width: 26px;
     height: 26px;
     margin-bottom: 5px;
@@ -135,7 +135,7 @@ Display Card
 }
 
 .accIcon {
-    background-image: url(images/acc.png);
+    background-image: url(../images/acc.png);
     width: 26px;
     height: 26px;
     margin-bottom: 5px;
@@ -188,7 +188,7 @@ select {
 }
 
 .illustration {
-    background-image: url('images/dipCoffee.gif');
+    background-image: url('../images/dipCoffee.gif');
     width: 500px;
     background-size: contain;
     z-index: -1;
@@ -235,7 +235,7 @@ font-family: 'Sacramento', cursive;
 }
 
 .david-img {
-    background-image: url('images/removeDavid.png');
+    background-image: url('../images/removeDavid.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -247,7 +247,7 @@ font-family: 'Sacramento', cursive;
 
 
 .nescafe-img {
-    background-image: url('images/nscafe.png');
+    background-image: url('../images/nscafe.png');
     background-size: contain;
     background-repeat: no-repeat;
     transition: top ease 0.5s;
@@ -259,7 +259,7 @@ font-family: 'Sacramento', cursive;
 }
 
 .rage-img {
-    background-image: url('images/removeRage.png');
+    background-image: url('../images/removeRage.png');
     background-size: contain;
     background-repeat: no-repeat;
     transition: top ease 0.5s;
@@ -368,7 +368,7 @@ position: relative; */
     background-size: cover;
 
     height: 650px;
-    background-image: url(images/buyMug.png);
+    background-image: url(../images/buyMug.png);
 }
 
 .explore2 {
@@ -384,7 +384,7 @@ position: relative; */
     margin-top: 2rem;
     background-size: cover;
     height: 570px;
-    background-image: url(images/machine-removebg-preview.png);
+    background-image: url(../images/machine-removebg-preview.png);
 }
 
 /* Footer */
@@ -513,7 +513,7 @@ footer {
 }
 
 .coffeeMug {
-    background-image: url(images/mugCoffee.png);
+    background-image: url(../images/mugCoffee.png);
     width: 10rem;
     height: 10rem;
     top: 32rem;
@@ -524,7 +524,7 @@ footer {
 }
 
 .cupCoffee {
-    background-image: url(images/cupCoffee.png);
+    background-image: url(../images/cupCoffee.png);
     width: 10rem;
     height: 10rem;
     top: 32rem;
@@ -535,7 +535,7 @@ footer {
 }
 
 .canCoffee {
-    background-image: url(images/canCoffee.png);
+    background-image: url(../images/canCoffee.png);
     width: 10rem;
     height: 10rem;
     top: 12rem;
@@ -546,7 +546,7 @@ footer {
 }
 
 .mugCoffee {
-    background-image: url(images/packCoffee.png);
+    background-image: url(../images/packCoffee.png);
     width: 10rem;
     height: 10rem;
     top: 12rem;
@@ -569,7 +569,7 @@ footer {
 }
 
 .logImage {
-    background-image: url('images/imgLogin.jpeg');
+    background-image: url('../images/imgLogin.jpeg');
     width: 725px;
     height: 650px;
     background-size: cover;
@@ -618,7 +618,7 @@ footer {
 /* Contact Banner */
 
 .contactBanner {
-    background-image: url(/images/moveBin.jpg);
+    background-image: url(../images/moveBin.jpg);
     width: 100%;
     height: 30rem;
     background-repeat: no-repeat;
@@ -726,7 +726,7 @@ footer {
 .productImage {
     width: 20%;
     height: 11rem;
-    background-image: url(images/david.jpg);
+    background-image: url(../images/david.jpg);
     background-size: contain;
 }
 
