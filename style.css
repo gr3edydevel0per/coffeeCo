@@ -9,6 +9,7 @@ body {
 
 .container {
     overflow: hidden;
+   
 }
 
 .center {
@@ -109,6 +110,12 @@ a:hover {
 h1 {
     font-size: 5rem;
 }
+
+
+/*
+Display Card
+
+*/
 
 .card {
     width: 37rem;
@@ -295,7 +302,7 @@ position: relative; */
 
 
 .strip {
-    width: 500px;
+    width: 33.33%;
     height: 1086px;
     position: absolute;
     left: 33.4%;
@@ -310,7 +317,7 @@ position: relative; */
     position: relative;
     z-index: -99;
     height: 800px;
-    margin-top: 24px;
+   /* margin-top: 24px;*/
     padding-top: 5rem;
 }
 
