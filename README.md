@@ -1,5 +1,5 @@
 
-<img src="./images/theCoffeeCo.png">
+<img src="./images/theCoffeCo.png">
 <img src="./images/landingPage.png">
 
 # Website Development Journey
