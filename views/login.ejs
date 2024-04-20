@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<%- include('head.ejs') %>
+<body>
+        
+    <%- include('header.ejs') %>
+    
+    <div class="loginContainer">
+        <div class="coffeeMug"></div>
+        <div class="cupCoffee"></div>
+        <div class="canCoffee"></div>
+        <div class="mugCoffee"></div>
+        <form action="/login" class="logInForm" method="POST">
+        <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email" class="inputBoxes addWid" onblur="checkEmail()" name="email">
+            <input type="password" id="passWord" placeholder="Password" class="inputBoxes addWid" onblur="checkEmail()" name="pass">
+            <div class="goInLine">
+                <input type="submit" placeholder="Password" class="logInSubmit" name="submitBtn">
+                <a href="/signup">Create Account</a>
+            </div>
+        </form>
+    </div>
+
+    
+<script>
+
+</script>
+
+</body>
+</html>

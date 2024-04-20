@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('head.ejs') %>
+
+<body>
+        
+    <navbar class="nav-bar">
+        <!-- <img src="images/logo.png" alt="logo" width="100px"> -->
+        <div class="logo">
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">Featured Products</a></li>
+                <li><a href="javascript:void()">Recently Launched</a></li>
+                <li><a href="javascript:void()">Contact Us</a></li>
+            </ul>
+            <div class="enter">
+                <a href="/signup" class="createAcc"><div class="accIcon"></div></a>
+                <p>|</p>
+                <a href="/cart" class="createAcc"><div class="cartIcon"></div></a>
+            </div>
+        </div>
+    </navbar>
+
+    <div class="loginContainer">
+            
+        <div class="coffeeMug"></div>
+        <div class="cupCoffee"></div>
+        <div class="canCoffee"></div>
+        <div class="mugCoffee"></div>
+        
+        <form action="/signup" class="logInForm signUpForm" method="POST">
+
+            <h2>Sign Up</h2>
+
+
+            <input type="text" id="username" placeholder="username" class="inputBoxes" name="username">
+            <div class="goInLine" style="width: 48%;">
+                <input type="text" placeholder="First Name" class="inputBoxes firstBox" onblur="checkEmail()" name="fname" style="padding-bottom: 0px;
+                padding-top: 0px;">
+                <input type="text" placeholder="Last Name" class="inputBoxes" onblur="checkEmail()" name="lname" style="padding-bottom: 0px;
+                padding-top: 0px;">
+            </div>
+            <input type="email" id="email" placeholder="Email" class="inputBoxes" onblur="checkEmail()" name="email">
+            <input type="tel" id="phone" name="phone"  class="inputBoxes"  placeholder="Phone Number" required>
+            <input type="password" id="passWord" placeholder="Password" class="inputBoxes" onblur="checkEmail()" name="pass">
+            
+            <div class="goInLine">
+                <input type="submit" placeholder="Password" class="logInSubmit"  name="submitBtn">
+            </div>
+        
+        </form>
+    </div>
+    
+    </footer>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

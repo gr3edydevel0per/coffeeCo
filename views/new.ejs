@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="css/feature.css">
+    <%- include('head.ejs') %>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script >// ng-app.js
+        angular.module('myApp', [])
+            .controller('ProductController', function($scope) {
+                // Define the products array with your data
+                $scope.products = [
+                    { id: 1, product_id: 1, coffee_name: 'Coffee 1', aroma: 'Aroma 1' },
+                    { id: 2, product_id: 2, coffee_name: 'Coffee 2', aroma: 'Aroma 2' },
+                    { id: 3, product_id: 3, coffee_name: 'Coffee 3', aroma: 'Aroma 3' },
+                    { id: 4, product_id: 4, coffee_name: 'Coffee 4', aroma: 'Aroma 4' },
+                    { id: 5, product_id: 5, coffee_name: 'Coffee 5', aroma: 'Aroma 5' },
+                    { id: 6, product_id: 6, coffee_name: 'Coffee 6', aroma: 'Aroma 6' },
+                    { id: 7, product_id: 7, coffee_name: 'Coffee 7', aroma: 'Aroma 7' },
+                    { id: 8, product_id: 8, coffee_name: 'Coffee 8', aroma: 'Aroma 8' },
+                    { id: 9, product_id: 9, coffee_name: 'Coffee 9', aroma: 'Aroma 9' },
+                    { id: 10, product_id: 10, coffee_name: 'Coffee 10', aroma: 'Aroma 10' },
+                    { id: 11, product_id: 11, coffee_name: 'Coffee 11', aroma: 'Aroma 11' },
+                    { id: 12, product_id: 12, coffee_name: 'Coffee 12', aroma: 'Aroma 12' },
+                    // Add more products as needed
+                ];
+        
+                // Function to add an item to the cart
+                $scope.addToCart = function(productId) {
+                    // Add your addToCart logic here
+                    console.log('Adding product with ID:', productId);
+                };
+            });
+        </script>
+</head>
+<body ng-controller="ProductController">
+    <div class="container">
+        <%- include('header.ejs') %>
+        <div class="items">
+            <div class="row" ng-repeat="product in products" ng-if="$index % 3 === 0 || $last">
+                <div class="featuredItems" ng-repeat="item in products.slice($index, $index + 3)">
+                    <div id="product-{{ item.id }}" class="single-product">
+                        <div class="part-1" ng-style="{'background-image': 'url(\'https://raw.githubusercontent.com/AbubakerSaeed/plants-shopping-uix/main/assets/' + item.product_id + '.png\')'}">
+                            <ul>
+                                <li><a href="javascript:void(0);" ng-click="addToCart(item.product_id)"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="javascript:void(0);"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="javascript:void(0);"><i class="fas fa-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title">{{ item.coffee_name }}</h3>
+                            <h4 class="product-price">{{ item.aroma }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<%- include('head.ejs') %>
+<link rel="stylesheet" href="css/feature.css">
+<body>
+    <div class="container">
+        
+        <%- include('header.ejs') %>
+
+        <div class="heading center">
+            <h1>Featured Products</h1>
+        </div>
+
+        <div id="popup-container">
+            <div id="popup-box">
+                <div id="popup-content">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="popup-message">Added to Cart!</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="items">
+            <% for (let i = 0; i < products.length; i++) { %>
+                <% if (i % 3 === 0) { %>
+                    <div class="row"> <!-- Start a new row after every 3 items -->
+                <% } %>
+                <div class="featuredItems">
+                    <div id="product-<%= products[i].id %>" class="single-product">
+                        <div class="part-1" style="--background-image: url('../images/product/<%= products[i].product_id %>.jpg')">
+
+                            <ul>
+                                <li><a href="javascript:void(0);" onclick="addToCart('<%= products[i].product_id %>');"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="javascript:void(0);"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="javascript:void(0);"><i class="fas fa-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title"><%= products[i].coffee_name %></h3>
+                            <h4 class="product-price"><%= products[i].aroma %></h4>
+                        </div>
+                    </div>
+                </div>
+                <% if ((i + 1) % 3 === 0 || i === products.length - 1) { %>
+                    </div> <!-- Close the row after every 3 items or at the end of the loop -->
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head.ejs') %>
+
+    <style>*,
+        *:after,
+        *:before {
+          box-sizing: border-box;
+        }
+        
+        ul {
+          padding-left: 10px;
+        }
+        
+        body {
+          font-family: "Josefin Sans", sans-serif;
+          color: #0a0a0a;
+          line-height: 1.4;
+        }
+        
+        a {
+          color: #000;
+        }
+        
+        .content {
+          z-index: 9999;
+        }
+        
+        .secure,
+        .backBtn {
+          display: flex;
+        }
+        .secure span,
+        .backBtn span {
+          margin-left: 5px;
+        }
+        
+        .backBtn {
+          margin-top: 20px;
+        }
+        
+        .secure {
+          color: #afb5c0;
+          align-items: flex-end;
+        }
+        .secure .icon {
+          font-size: 20px;
+          line-height: 20px;
+        }
+        
+        .logo {
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+        }
+        .logo .icon {
+          font-size: 32px;
+          line-height: 32px;
+          margin-right: 5px;
+        }
+        
+        img {
+          width: 100%;
+          border-radius: 8px 0 0 8px;
+        }
+        
+        .details {
+
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 47%;    float: left;
+        }
+        .details__item {
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            margin-top: 10px;
+          display: flex;
+          padding: 10px;
+            border-radius: 8px;
+            width: 636px;
+            margin-left: 90px;
+        }
+        .details__user {
+          background: #f6f9fc;
+          padding: 20px;
+          border-radius: 8px;
+          border: 1px solid #dadada;
+        }
+        
+        .item__quantity {
+          position: relative;
+          right: 50px;
+          top: -63px;
+          float: right;
+          font-size: 20px;
+        }
+        .order__image {
+            top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+        }
+        .order__image .iphone {
+
+          margin-left: -100px;
+          width: 200px;
+          height: 200px;
+        }
+    
+        .item__title {
+          font-size: 28px;
+          font-weight: 600;
+        }
+        .item__price {
+          font-size: 22px;
+          color: #bec3cb;
+        }
+        
+        .icon {
+          font-size: 16px;
+          vertical-align: middle;
+        }
+        
+       
+        .container {
+          width: 50%;
+          margin: 0 auto;
+        }
+        
+        .shadow {
+          box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+        
+        .row {
+          display: flex;
+        }
+        
+        .txt {
+          border-color: #e1e8ee;
+          width: 100%;
+        }
+        
+        .input {
+          border-radius: 5px;
+          border-style: solid;
+          border-width: 2px;
+          height: 48px;
+          padding-left: 15px;
+          font-weight: 600;
+          font-size: 14px;
+          color: #5e6977;
+        }
+        
+        input[type="text"] {
+          display: initial;
+          padding: 15px;
+        }
+        
+        .text-validated {
+          border-color: #7dc855;
+          background-image: url("../images/icon-tick.png");
+          background-repeat: no-repeat;
+          background-position: right 18px center;
+        }
+        
+        .ddl {
+          border-color: #f0f4f7;
+          background-color: #f0f4f7;
+          width: 100px;
+          margin-right: 10px;
+        }
+        
+        .title {
+          font-size: 14px;
+          padding-bottom: 8px;
+        }
+        
+        .field {
+          padding-top: 15px;
+          padding-right: 30px;
+          width: 50%;
+        }
+        .field.small {
+          width: auto;
+        }
+        
+        .notification {
+          text-align: center;
+          font-size: 28px;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+        }
+        .notification .icon {
+          font-size: 28px;
+          color: #7dc855;
+          line-height: 28px;
+          margin-right: 10px;
+        }
+        
+        .actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 60px 0 40px 0;
+        }
+        
+        .payment {
+          padding: 30px 0 0 10px;
+        }
+        .payment__title {
+          margin: 0px 0 20px 0;
+          font-size: 18px;
+          font-weight: bold;
+          display: flex;
+          text-align: left;
+        }
+        .payment__title .icon {
+          margin-right: 10px;
+        }
+        
+        .btn {
+          font-family: "Josefin Sans", sans-serif;
+          border-radius: 8px;
+          border: 0;
+          letter-spacing: 1px;
+          color: #fff;
+          background: #246eea;
+          padding: 20px 60px;
+          white-space: nowrap;
+          font-size: 16px;
+          line-height: 1;
+          text-transform: uppercase;
+          transition: all 0.15s ease;
+          text-decoration: none;
+        }
+        .btn .icon {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+        .btn:hover {
+          -webkit-transform: translateY(-1px);
+                  transform: translateY(-1px);
+          background: #4984ea;
+        }
+        .btn.action__back {
+          background: transparent;
+          color: #a0a0a0;
+        }
+        
+        .payment__types {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .payment__info {
+          display: flex;
+        }
+        
+        .payment__cc {
+          flex: 60%;
+        }
+        
+        .payment__shipping {
+          flex: 40%;
+        }
+        
+        .shipping__info {
+          background: #f6f9fc;
+          padding: 10px;
+          border-radius: 8px;
+        }
+        
+        .payment__type {
+          display: flex;
+          border: 2px solid #d9d9d9;
+          border-radius: 8px;
+          padding: 7px 51px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          color: #d9d9d9;
+          transition: all 0.15s ease;
+        }
+        .payment__type:hover {
+          -webkit-transform: translateY(-1px);
+                  transform: translateY(-1px);
+        }
+        .payment__type.active {
+          color: #0a0a0a;
+          background: #f6fcf7;
+          border-color: #7dc855;
+        }
+        .payment__type .icon {
+          font-size: 32px;
+          margin-right: 10px;
+        }
+        .payment__type + .payment__type {
+          margin-left: 10px;
+        }
+        
+        .icon-xl {
+          font-size: 48px;
+          line-height: 48px;
+        }
+        
+        .content {
+          display: block;
+        }
+        
+        .thankyou {
+          display: block;
+        }
+        .thankyou .details {
+          opacity: 1;
+          justify-content: center;
+          align-items: center;
+        }
+        .thankyou .details h3 {
+          font-weight: 600;
+        }
+        .thankyou .details__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .thankyou .details__item .icon-xl {
+          font-size: 32px;
+          color: #7dc855;
+          line-height: 32px;
+        }
+        
+        .loading {
+          position: relative;
+        }
+        .loading:after {
+          -webkit-animation: spinAround .5s infinite linear;
+                  animation: spinAround .5s infinite linear;
+          border: 4px solid #7dc855;
+          border-radius: 290486px;
+          border-right-color: transparent;
+          border-top-color: transparent;
+          content: "";
+          height: 5em;
+          width: 5em;
+          position: absolute;
+        }
+        .loading .details__item {
+          opacity: 0;
+        }
+        
+        @-webkit-keyframes spinAround {
+          from {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+          }
+          to {
+            -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+          }
+        }
+        
+        @keyframes spinAround {
+          from {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+          }
+          to {
+            -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+          }
+        }
+        </style>
+</head>
+
+<body>
+
+    <%- include('header.ejs') %>
+    <div class="heading center" style="    margin-bottom: 50px;">
+        <h1>Order No : <%= orderItems[0].order_id%> </h1>
+    </div>
+
+      <section class="content" style="margin-bottom: 100px;">
+    
+        <div class="details " style=" overflow-y: scroll; height: 550px;">
+            <% for (let i = 0; i < orderItems.length; i++) { %>
+            <div class="details__item shadow">
+    
+            <div class="order__image">
+              <img class="iphone" src="../images/product/<%= orderItems[i].product_id%>.jpg" alt="">
+            </div>
+            <div class="item__details">
+              <div class="item__title">
+                <%= orderItems[i].coffee_name%>
+              </div>
+              <div class="item__price">
+               @ ₹<%= orderItems[i].price * orderItems[i].quantity %>
+              </div>
+              <div class="item__quantity">
+               <b>Quantity :</b>  <%=  orderItems[i].quantity   %>
+              </div>
+              <div class="item__description">
+                <ul >
+                  <li><b>Aroma :</b> <%= orderItems[i].aroma%></li>
+                  <li><b>Origin :</b><%= orderItems[i].origin%></li>
+                  <li><b>Roasting Level :</b><%= orderItems[i].roasting_level%></li>
+                  <li><b>Description :</b><%= orderItems[i].description%></li>
+
+                </ul>
+    
+              </div>
+    
+            </div>
+          </div>
+          <% } %>
+
+        </div>
+    
+
+        <div class="discount"></div>
+    
+        <div class="container">
+          <div class="payment">
+            <div class="payment__title">
+              Payment Method
+            </div>
+            <div class="payment__types">
+              <div class="payment__type payment__type--cc active">
+                <i class="icon fa fa-credit-card" aria-hidden="true"></i>Card</div>
+              <div class="payment__type payment__type--paypal">
+                <i  class="icon fa fa-paypal" aria-hidden="true"></i>Paypal</div>
+              <div class="payment__type payment__type--paypal">
+                <i class="icon fa-solid fa-wallet"></i>SEPA</div>
+              <div class="payment__type payment__type--paypal">
+                <i class="icon fas fa-file-invoice"></i>Invoice</div>
+            </div>
+           <div class="billingInformation"><div class="payment__shipping">
+            <div style=" font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px ;">
+              <i class="icon icon-plane"></i> Billing Information
+            </div>
+            <div class="details__user">
+              <div class="user__name">  <%= user[0].first_name + " " + user[0].last_name  %>
+                <br><%=user[0].phone_number%></div>
+              <div class="user__address" ><span style="font-weight: 550;">Billing Address</span> <br> <%=userAddress[0].address_line%><br>
+                <%=userAddress[0].city%>,&nbsp;<%=userAddress[0].state%> - <%=userAddress[0].postal_code%>
+                <br><%=userAddress[0].country%></div>
+            </div>
+
+          </div></div>
+
+            <div class="payment__info">
+              <div class="payment__shipping">
+                <div style=" font-size: 18px;
+                font-weight: bold;
+                margin-top: 10px ;">
+                  <i class="icon icon-plane"></i> Shiping Information
+                </div>
+                <div class="details__user">
+                  <div class="user__name">  <%= user[0].first_name + " " + user[0].last_name  %>
+                    <br><%=user[0].phone_number%></div>
+                  <div class="user__address" ><span style="font-weight: 550;">Shipping Address</span> <br> <%=userAddress[0].address_line%><br>
+                    <%=userAddress[0].city%>,&nbsp;<%=userAddress[0].state%> - <%=userAddress[0].postal_code%>
+                    <br><%=userAddress[0].country%></div>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+     
+      </section>
+   
+</body>
+</html>

@@ -1,0 +1,192 @@
+.featuredItems{
+    width: 400px;
+    text-align: center;
+    height: 400px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 3px 10px 2px;
+}
+
+
+.single-product .part-1 {
+    position: relative;
+    height: 325px;
+    max-height: 325px;
+    margin-bottom: 80px;
+    top: 10px;
+
+}
+
+.single-product .part-1::before {
+		position: absolute;
+		content: "";
+		top: 25px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		transition: all 0.3s;
+}
+
+.single-product:hover .part-1::before {
+		transform: scale(1.2,1.2) rotate(5deg);
+}
+
+.part-1::before {
+    background:  var(--background-image) no-repeat center;
+    background-size:contain;
+		
+}
+
+
+
+
+.single-product .part-1 ul {
+    position: absolute;
+    bottom: -41px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+.single-product:hover .part-1 ul {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.single-product .part-1 ul li {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.single-product .part-1 ul li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff;
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+    transition: color 0.2s;
+}
+
+.single-product .part-1 ul li a:hover {
+    color: #fe302f;
+}
+
+.single-product .part-1 .discount,
+.single-product .part-1 .new {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #ffffff;
+    background-color: #fe302f;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.single-product .part-1 .new {
+    left: 0;
+    background-color: #444444;
+}
+
+.single-product .part-1 ul {
+    position: absolute;
+    bottom: -41px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+.single-product:hover .part-1 ul {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.single-product .part-1 ul li i {
+    display: inline-block;
+    margin-right: 4px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff;
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.single-product .part-1 ul li a:hover {
+    color: #fe302f;
+}
+
+
+.single-product .part-2 .product-title {
+    font-size: 1rem;
+}
+
+.single-product .part-2 h4 {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.single-product .part-2 .product-old-price {
+    position: relative;
+    padding: 0 7px;
+    margin-right: 2px;
+    opacity: 0.6;
+}
+
+.single-product .part-2 .product-old-price::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #444444;
+    transform: translateY(-50%);
+}
+
+
+
+/* CSS */
+/* CSS */
+/* CSS */
+#popup-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 20px; /* Adjust top positioning as needed */
+    right: 20px; /* Adjust right positioning as needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#popup-box {
+    max-width: 300px;
+    text-align: center;
+}
+
+#popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head.ejs') %>
+    <link rel="stylesheet" href="css/cart.css">
+
+
+<body>
+    <%- include('header.ejs') %>
+    
+     
+    
+            <% if (cartItems.length === 0) { %>
+                <div class="emptyCartMessage"  >
+                   <img src="images/coffeeCart.png" alt="">
+                    <h2>Your cart is empty</h2>
+                    <p>Looks like you haven't added anything to your cart yet</p>
+                    <a href="/featured" class="btn-shop" style="  font-family: 'Amatic SC', cursive;color: #fff;text-decoration: none;padding: 10px 0;border-radius: 5px;text-align: center;display: block;line-height: 25px;box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.3);transition: background-color 0.3s ease;background: #c49c88;width: 40%;font-size: 2em;">EXPLORE PRODUCTS</a>
+                  </div>
+             <% } else { %>
+              <div class="cartList">
+                <ul class="cartItems">
+                <% for (let i = 0; i < cartItems.length; i++) { %>
+        
+            <li class="grid_4 cartItem item-no-<%= cartItems[i].cart_id %>" id="cart-no-<%= cartItems[i].cart_id %>">
+              <a href="#" class="btn-remove" id="removeItem_<%= cartItems[i].cart_id %>">
+                <i class="far fa-trash-alt"></i>
+              </a>
+              <div class="preview">
+                <img src="../images/product/<%= cartItems[i].product_id%>.jpg" />
+              </div>
+              <div class="details" data-price="15.50">
+                <h3>
+                    <%= cartItems[i].coffee_name %>
+                </h3>
+                <p>  <%= cartItems[i].description %></p>
+      
+              </div>
+              <div class="inner_container">
+      
+                <div class="col_1of2 align-center picker">
+                  <p>
+                    <a href="#" class="btn-quantity plus">
+                      <i class="fas fa-plus"></i>
+                    </a>
+                  <div class="col_1of2 quantity-text">
+                    <p><span class="current_quantity"><%= cartItems[i].quantity %></span> @ ₹<%= cartItems[i].price * cartItems[i].quantity %></p>
+                  </div>
+                  <a href="#" class="btn-quantity minus">
+                    <i class="fas fa-minus"></i>
+                  </a>
+                  </p>
+      
+                </div>
+              </div>
+      
+            </li>
+            <% } %>
+            <% } %>
+
+
+
+
+         
+          </ul></div>
+          <div class=" checkoutList" >
+    
+      <div class="grid_12 delivery-payment">
+        <div class="grid_6 delivery-address">
+          <h3>Delivery Address</h3>
+          <p>46 Vale Road</br>
+            Ramsgate</p>
+        </div>
+        <div class="grid_6 payment-details">
+          <h3>Payment Card</h3>
+          <p> **** **** **** 8678</p>
+        </div>
+      </div>
+      <div class="grid_12 coupon">
+        <h3>Apply Coupon</h3>
+        <input class="coupon-input" type="text">
+      </div>
+ 
+      <div class="grid_12 summary">
+        <div class="inner_container">
+          <div class="summary-content">
+          <div class="col_1of2 meta-data" style="margin-left: 10px;">
+            <div class="sub-total">
+              <strong style="  font-family: 'Sacramento', cursive;">Sub Total&nbsp;: </strong><span class="amount" style="margin-left: 27px;">₹<%=totalBill%>/-</span>
+            </div>
+            <div class="taxes">
+              <strong style="  font-family: 'Sacramento', cursive;">Plus VAT: </strong><span class="amount">@ 20%</span>
+            </div>
+  
+          </div>
+          <div class="col_1of2">
+            <div class="total">
+              <span class="amount"></span>
+            </div>
+          </div>
+          </div>
+          <div class="btn-summary">
+  
+            <a href="#" class="btn-checkout btn-reverse">Continue Shopping</a>
+  
+            <a href="#" onclick="showCheck()" class="btn-checkout">Checkout</a>
+  
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+    <div id="checkConfirm" style="justify-content: center;align-items: center;display: none;">
+    <div id="overlay" style="left: 40%;
+    position: absolute;
+    top: 40%;" >
+      <div class="cookiesContent" id="cookiesPopup">
+        <img src="images/vector.png" alt="cookies-img" />
+        <p>Confirm Checkout !!</p>
+       <a href="/thanks"> <button class="accept" style="cursor: pointer;">That's fine!</button><a>
+      </div>
+    </div>
+    </div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const removeButtons = document.querySelectorAll('.btn-remove');
+        removeButtons.forEach(button => {
+          button.addEventListener('click', async function (event) {
+            event.preventDefault();
+            const cartItemId = button.id.split('_')[1]; // Extract the cart item ID
+    
+            try {
+              const response = await fetch('/removeFromCart', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ itemId: cartItemId }),
+              });
+              if (response.ok) {
+                // Handle success (e.g., remove item from the UI)
+                const itemToRemove = document.getElementById(`cart-no-${cartItemId}`);
+                if (itemToRemove) {
+                  itemToRemove.remove();
+                }
+    
+                // Update total
+                const totalElement = document.querySelector('.amount');
+                const subtotal = parseFloat(totalElement.innerText.replace('₹', '').replace('/-', ''));
+                const itemPrice = parseFloat(cartItems.find(item => item.cart_id === cartItemId).price) * parseFloat(cartItems.find(item => item.cart_id === cartItemId).quantity);
+                const newTotal = subtotal - itemPrice;
+                totalElement.innerText = `₹${newTotal}/-`;
+              } else {
+                console.error('Error removing item from cart:', response.statusText);
+              }
+            } catch (error) {
+              console.error('Error removing item from cart:', error);
+            }
+          });
+        });
+      });
+    </script>
+    
+<script src="js/script.js"></script>
+
+</body>
+</html>
