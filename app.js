@@ -54,7 +54,7 @@ app.get("/order", async (req, res) => {
     SELECT * FROM users WHERE user_id = ${userID};
   `);
   const userAddress = await executeQuery(`
-    SELECT * FROM addresses WHERE user_id = ${userID};
+    SELECT * FROM addresses WHERE user_id = 23;
   `);
 
   const orderItems = await executeQuery(`
