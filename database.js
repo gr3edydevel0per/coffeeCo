@@ -1,11 +1,18 @@
 const mariadb = require('mariadb');
+require('dotenv').config();
+
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPass = process.env.DB_PASS;
+
+// Now you can use dbHost, dbUser, and dbPass in your application
 
 async function executeQuery(sql) {
    try {
       const connection = await mariadb.createConnection({
-         host: '127.0.0.1',
-         user: 'greedydev',
-         password: 'root',
+         host: dbHost,
+         user: dbUser,
+         password:dbPass,
          database: 'coffeeCo',
          port: 3306 // default port for MariaDB
       });

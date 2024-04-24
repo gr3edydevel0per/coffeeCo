@@ -1,7 +1,6 @@
 {
   "name": "coffeeco-ng",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +9,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mariadb": "^3.3.0",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr3edydevel0per/coffeeCo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gr3edydevel0per/coffeeCo/issues"
+  },
+  "homepage": "https://github.com/gr3edydevel0per/coffeeCo#readme",
+  "description": ""
 }
